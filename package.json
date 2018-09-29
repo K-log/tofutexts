@@ -1,0 +1,22 @@
+{
+  "name": "tofutexts",
+  "version": "1.0.0",
+  "description": "The tofutexts website",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/K-log/tofutexts.git"
+  },
+  "author": "k-log",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/K-log/tofutexts/issues"
+  },
+  "homepage": "https://github.com/K-log/tofutexts#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
