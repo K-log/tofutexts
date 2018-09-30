@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+}
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+ul.topnav{
+  float: center;
+}
+
+ul.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 0.9em 0.8em;
+    margin: 0.2em;
+    text-decoration: none;
+}
+
+ul.topnav li a:hover {
+  background-color: #111;
+}
+
+ul.topnav li.left {
+  float: left;
+}
+
+@media screen and (max-width: 600px){
+    ul.topnav li.right, 
+    ul.topnav li {
+      float: none;
+    }
+}
