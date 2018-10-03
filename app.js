@@ -2,7 +2,13 @@ const express = require('express');
 const fs = require('fs');
 const engines = require('consolidate');
 const path = require("path");
-const router = express.Router();
+const langR = require("./routes/langAndMachRoute");
+const lambdaR = require("./routes/lambdaCalcRoute");
+const logicR = require("./routes/logicProgrammingRoute");
+const typesR = require("./routes/typesAndProgRoute");
+
+
+
 const app = express();
 const port = 50000;
 
@@ -27,36 +33,49 @@ var logger = function(err, req, res, next){
     next();
 }
 
+var normalizeIndex = function(req, res, next){
+  if(req.url == "/index.ejs"){
+    req.url = "/";
+    console.log(req.url)
+  }
+  next()
+}
 
-router.use(logger);
-// router.get('/', function(req, res){
-//     //res.send('Hello World!');
-//     res.send("Hello </br><a href='/languages-and-machines/'>week1</a>");
+
+app.use(logger);
+
+app.use("/languages-and-machines/", langR);
+app.use("/lambda-calculus/", lambdaR);
+app.use("/logic-programmings/", logicR);
+app.use("/types-and-programming-languages/", typesR);
+
+app.get('/', function(req, res){
+    //res.send('Hello World!');
+    res.send("Hello </br><a href='/languages-and-machines/'>week1</a>");
+});
+
+
+// app.get("*", function(req, res){
+//     res.render(__dirname + "/public/base.ejs", 
+//         {
+//             title: req.url.title,
+//             filePath: path.join(__dirname, "/views/languages-and-machines/week1.html")
+//         });
+
 // });
 
-router.get("*", function(req, res){
-    res.render(__dirname + "/public/base.ejs", 
-        {
-            title: req.url.title,
-            filePath: path.join(__dirname, "views/languages-and-machines/week1.html")
-        });
 
-});
+// app.get('/', function(req, res){
+//     res.sendFile(__dirname + "/views/languages-and-machines/week1.html");
+// });
 
-/**
-router.get('/languages-and-machines/', function(req, res){
-    res.sendFile(__dirname + "/views/languages-and-machines/week1.html");
-});
-*/
 
-app.use("/", router);
-
-app.use("*", function(req, res){
-    res.sendFile(__dirname + "/public/404.html");
-})
+// app.use("*", function(req, res){
+//     res.sendFile(__dirname + "/public/404.html");
+// })
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}!`); 
-    stream.write(new Date().toISOString() + ` Starting Server on port ${port}!\n---\n`);
+    stream.write(new Date().toISOString() + `Starting Server on port ${port}!\n---\n`);
     stream.write('Time | Request | error\n\---|---|---|\n')
 });
