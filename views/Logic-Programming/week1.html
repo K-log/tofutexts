@@ -1,0 +1,88 @@
+
+                 <body><h1 data-line="0" id="Week-1">Week 1</h1>
+<hr />
+<h3 data-line="2" id="Prolog">Prolog</h3>
+<ul>
+<li>
+<p data-line="4">Declaritive</p>
+</li>
+<li>
+<p data-line="5">Recursion(no &quot;for&quot; or &quot;while&quot; loops)</p>
+</li>
+<li>
+<p data-line="6">Relations (no functions)</p>
+</li>
+<li>
+<p data-line="7">Unification</p>
+<ul>
+<li>With the help of variables</li>
+<li>Very powerful</li>
+</ul>
+</li>
+<li>
+<p data-line="11">Syntax</p>
+<ul>
+<li>Atoms
+<ul>
+<li>An atom can be one of two things</li>
+<li>A string of characters made up of upper and lower-case letters, digits, underscores, and must begin with a lower-case character.</li>
+<li>An arbitrary sequence of characters enclosed in single quotes.</li>
+<li>A string of special characters</li>
+</ul>
+</li>
+<li>Variables
+<ul>
+<li>A string of upper-case or lower-case letters, digits and underscores. Starts with either an upper-case letter or an underscore.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre class="code CodeMirror"><span class="filename"></span><span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span></span><code class="">    happy(yolanda)
+    listens2music(mia)
+    listens2music(yolanda) :- happy(yolanda)
+    playsAirGuitar(mia) :- listens2music(mia)
+    playsAirGuitar(yolanda) :- listens2music(yolanda)
+</code></pre>
+<p data-line="29">There are 5 clauses in this knowledge base.</p>
+<p data-line="31">There are 3 predicates in this knowledge base: happy, listens2music, and playsAirGuitar</p>
+<pre class="code CodeMirror"><span class="filename"></span><span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span></span><code class="">listens2music(yolanda) :- happy(yolanda)
+</code></pre>
+<p data-line="37">reads as</p>
+<pre class="code CodeMirror"><span class="filename"></span><span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span></span><code class="">if yolanda is happy then yoland listens to music
+</code></pre>
+<hr />
+<table data-line="43">
+<thead>
+<tr>
+<th style="text-align:center">–</th>
+<th>Prolog</th>
+<th>Logic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Implication</td>
+<td>A <code>:-</code> B</td>
+<td>B <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.36687em;"></span><span class="strut bottom" style="height:0.36687em;vertical-align:0em;"></span><span class="base"><span class="mrel">→</span></span></span></span> A</td>
+</tr>
+<tr>
+<td style="text-align:center">Conjunction</td>
+<td>A<code>,</code> B</td>
+<td>A <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∧</mo></mrow><annotation encoding="application/x-tex">\wedge</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.55556em;"></span><span class="strut bottom" style="height:0.55556em;vertical-align:0em;"></span><span class="base"><span class="mord">∧</span></span></span></span> B</td>
+</tr>
+<tr>
+<td style="text-align:center">Disjunction</td>
+<td>A<code>;</code> B</td>
+<td>A <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∨</mo></mrow><annotation encoding="application/x-tex">\vee</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.55556em;"></span><span class="strut bottom" style="height:0.55556em;vertical-align:0em;"></span><span class="base"><span class="mord">∨</span></span></span></span> B</td>
+</tr>
+</tbody>
+<tbody></tbody>
+</table>
+<p data-line="49">Use of inference (modus pones)<br />
+Negation(?)</p>
+<hr />
+<p data-line="53"><strong>Q:</strong> What exactly are facts, rules, and queries built of?</p>
+<p data-line="55"><strong>A:</strong> Prolog terms</p>
+</body>
+              </html>
