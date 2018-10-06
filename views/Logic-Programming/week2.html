@@ -1,0 +1,17 @@
+
+                 <body><h1 data-line="0" id="Week-2">Week 2</h1>
+<h5 data-line="2" id="Unification">Unification</h5>
+<pre class="code CodeMirror"><span class="filename"></span><span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span></span><code class="prolog">?- mia = mia.
+true
+?- mia = X.
+true
+?- X=mia, X=vincent.
+false
+</code></pre>
+<p data-line="12"><strong>Occurs check:</strong> Check if the variable actually occurs in the complex term.</p>
+<pre class="code CodeMirror"><span class="filename"></span><span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span></span><code class="Prolog">?- father(X) = X.
+X=father(father(father(father(...))))
+yes
+</code></pre>
+</body>
+              </html>

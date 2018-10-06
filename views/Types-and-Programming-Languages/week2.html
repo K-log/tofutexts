@@ -81,5 +81,55 @@ f     App      g    App
 </ul>
 </li>
 </ul>
+<hr />
+<p data-line="92"><strong>Exercise:</strong> Translate the proof of the Lemma 3.3.3 in Pierce into a structural induction proof.</p>
+<ul>
+<li>Hint: The translation is almost trivial because, for any term of k, the immediate subterms are k for depth of d
+<ul>
+<li>Same induction hypothesis. Says its a proof by induction on strutural induction.</li>
+</ul>
+</li>
+</ul>
+<h4 data-line="96" id="downarrow-The-following-are-taken-from-lect-notes-downarrow"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>↓</mo></mrow><annotation encoding="application/x-tex">\downarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base"><span class="mrel">↓</span></span></span></span> The following are taken from lect notes <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>↓</mo></mrow><annotation encoding="application/x-tex">\downarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base"><span class="mrel">↓</span></span></span></span></h4>
+<h4 data-line="98" id="Semantic-Styles-Pierce-34">Semantic Styles  (Pierce 3.4)</h4>
+<ul>
+<li>
+<p data-line="99">Operational Semantics</p>
+<ul>
+<li>An abstract machine with a transition function. The machine is typically an abstraction of the language being defined (rather than some low-level assembly language or Turing machine). The language is defined by what the abstract machine does.</li>
+</ul>
+</li>
+<li>
+<p data-line="102">Denotational Semantics</p>
+<ul>
+<li>The meaning of a program in a language is a mathematical object, such as a function or a number. An &quot;interpretation function&quot; maps programs into mathematical objects in &quot;semantic domains&quot;.</li>
+</ul>
+</li>
+<li>
+<p data-line="105">Axiomatic Semantics</p>
+<ul>
+<li>A language definition as a set of laws. The meaning of a program is what can be proved about it. The method focuses on the process of reasoning about programs. A typical property is an &quot;invariant&quot; propertity that the program is expected to maintain throughout loops, for example.</li>
+</ul>
+</li>
+</ul>
+<h4 data-line="109" id="Operational-Semantics">Operational Semantics</h4>
+<ul>
+<li>
+<p data-line="111">Pierce chooses Operational Semantics and presents it in terms of rules for &quot;Evaluation&quot;. I will sometimes refer to this as &quot;Evaluation Semantics&quot;.</p>
+</li>
+<li>
+<p data-line="113">Early operational semantics was based on a &quot;state-transition&quot; style of automata theory (eg, Finite State Automata, Turning machines). This is biased to a veiw of computing as &quot;stored program&quot;, or Von Neumann style computation.</p>
+</li>
+<li>
+<p data-line="115">Operational semantics as presented by Pierce (and others) is based on defining evaluation using an inference rule style. This has the advantage of being less tied to &quot;stored program&quot; models and closer to logic and mathematics.</p>
+</li>
+<li>
+<p data-line="117">Evaluation by inference rules evolved out of the semantics of the lambda calculus and the &quot;Natural Deduction&quot; (Gentzen) style of reasoning in logic.</p>
+</li>
+<li>
+<p data-line="119">The beta reduction of the lambda calculus is an inference rule style of evaluation.</p>
+</li>
+</ul>
+<hr />
 </body>
               </html>

@@ -84,5 +84,24 @@ Negation(?)</p>
 <hr />
 <p data-line="53"><strong>Q:</strong> What exactly are facts, rules, and queries built of?</p>
 <p data-line="55"><strong>A:</strong> Prolog terms</p>
+<pre class="code CodeMirror"><span class="filename"></span><span class="lineNumber CodeMirror-gutters"><span class="CodeMirror-linenumber">1</span><span class="CodeMirror-linenumber">2</span><span class="CodeMirror-linenumber">3</span><span class="CodeMirror-linenumber">4</span><span class="CodeMirror-linenumber">5</span><span class="CodeMirror-linenumber">6</span><span class="CodeMirror-linenumber">7</span><span class="CodeMirror-linenumber">8</span></span><code class="text">                     Term
+                     /       \
+  Simple terms         Complex terms
+       /              \
+Constants   Variables
+    /        \
+Atoms   Numbers
+
+</code></pre>
+<ul>
+<li>Complex terms are build out of a <strong>functor</strong> directly followed by a sequence of <strong>arguments</strong>
+<ul>
+<li>Arguments are put in round brackets, separated by commas.</li>
+<li>The functor must be an atom.</li>
+</ul>
+</li>
+<li>The number of arguments a complex term has is called its <strong>arity</strong></li>
+<li></li>
+</ul>
 </body>
               </html>
