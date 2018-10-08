@@ -60,6 +60,26 @@ app.get('/about', function(req, res){
 });
 
 
+  // Handle 404
+  app.use(function(req, res) {
+    res.status(400);
+    res.render(__dirname + "/public/base.ejs", 
+        {
+            title: "Error 400",
+            filePath: path.join(__dirname, "/public/error.ejs")
+        });
+});
+
+// Handle 500
+app.use(function(error, req, res, next) {
+    res.status(500);
+    res.render(__dirname + "/public/base.ejs", 
+        {
+            title: "Error 500",
+            filePath: path.join(__dirname, "/public/error.ejs")
+        });
+});
+
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}!`); 
     stream.write(new Date().toISOString() + `Starting Server on port ${port}!\n---\n`);
