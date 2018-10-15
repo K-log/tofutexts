@@ -5,15 +5,15 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="nav collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
             <a class="nav-link" href="/">Home</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Notes
+          <li class="nav-item dropdown" :hover>
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="/#" id="notesDropdown" role="button">Notes
             <span class="caret"></span></a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu" aria-labelled="notesDropdown">
               <li class="nav-item"><a class="nav-link" href="/notes/lambda-calculus">Lambda Calculus</a></li>
               <li class="nav-item"><a class="nav-link" href="/notes/languages-and-machines">Languages and Machines</a></li>
               <li class="nav-item"><a class="nav-link" href="/notes/logic-programming">Logic Programming</a></li>
@@ -30,9 +30,9 @@
       </div>
     </div>
   </nav>
-  <div class="container bg-light" id="main">
+  <div class="container bg-light" id="mainContent">
     <div class="row">
-      <div class="col-md-10 mx-auto text-dark">
+      <div class="col-md-10 col-sm-12 mx-auto text-dark">
         <div id="content text-dark">
           <% if(filePath.length > 0) { %>
             <%- include(filePath); -%>  
