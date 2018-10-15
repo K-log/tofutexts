@@ -35,6 +35,7 @@ app.use(logger);
 
 app.use("/notes", notesHelper);
 
+// Index
 app.get('/', function (req, res) {
   res.render(__dirname + "/public/base.ejs",
     {
