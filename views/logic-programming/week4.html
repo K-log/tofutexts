@@ -1,0 +1,48 @@
+    <body>
+        <h1 id="week-4">Week 4</h1>
+<hr>
+<p>From concrete to abstract:</p>
+<pre><code>    Exp
+  /  |  \
+Expr + Expr
+ |       |
+Nat     Nat
+ |       |
+ 5       3
+</code></pre>
+<p>and an abstract syntax tree of:</p>
+<pre><code>  plus
+ /   \
+5     3
+</code></pre>
+<hr>
+<p>Prolog uses lists for data aggregation. It does not put constraints on the types stored in a list.</p>
+<ul>
+<li>Lists are enclosed in square brackets.</li>
+<li>The length of a list is the number of elements it has.</li>
+<li>All sorts of Prolog terms can be elements of a list.</li>
+<li>There is a special list: The empty list []</li>
+<li>Tails of [a] is the empty list.</li>
+<li>The list [a] <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo≯</mo><mo>=</mo></mrow><annotation encoding="application/x-tex">\ne</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mrel latin_fallback" style="position:absolute;padding-left:0.8em;"≯</span></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span></span></span></span> item a</li>
+</ul>
+<p>B.C. [] <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∈</mo></mrow><annotation encoding="application/x-tex">\in</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">∈</span></span></span></span> List</p>
+<p>R.C. if <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>∈</mo></mrow><annotation encoding="application/x-tex">x \in</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathit">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span></span></span></span> List<br>
+and <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>∈</mo></mrow><annotation encoding="application/x-tex">a\in</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathit">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span></span></span></span> any Set/Types<br>
+then <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mi>a</mi><mi mathvariant="normal">∣</mi><mi>x</mi><mi>s</mi><mo>]</mo><mo>∈</mo></mrow><annotation encoding="application/x-tex">[a|xs] \in</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathit">a</span><span class="mord">∣</span><span class="mord mathit">x</span><span class="mord mathit">s</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span></span></span></span> List</p>
+<p>closure <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mi>y</mi><mi mathvariant="normal">∣</mi><mi>y</mi><mi>s</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">[y|ys]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mord">∣</span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mord mathit">s</span><span class="mclose">]</span></span></span></span></p>
+<hr>
+<pre class="hljs"><code><div>
+<span class="hljs-comment">% Head</span>
+head([<span class="hljs-symbol">X</span>|<span class="hljs-symbol">_</span>], <span class="hljs-symbol">X</span>).
+
+<span class="hljs-comment">% Tail</span>
+tail([<span class="hljs-symbol">_</span>|<span class="hljs-symbol">Xs</span>], <span class="hljs-symbol">Xs</span>).
+
+<span class="hljs-comment">% Length</span>
+length([], <span class="hljs-number">0</span>).
+length([<span class="hljs-symbol">_</span>|<span class="hljs-symbol">Xs</span>], <span class="hljs-symbol">N</span>) :- length(<span class="hljs-symbol">Xs</span>, <span class="hljs-symbol">N1</span>), <span class="hljs-symbol">N</span> is <span class="hljs-symbol">N1</span>.
+
+</div></code></pre>
+
+    </body>
+    </html>

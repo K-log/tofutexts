@@ -1,15 +1,19 @@
 
-                 <body><h1 data-line="0" id="Week-1">Week 1</h1>
-<hr />
-<h4 data-line="2" id="Type-Systems-in-Computing">Type Systems in Computing</h4>
-<p data-line="4">&gt;A type system is a tractable syntactic method for proving thea bsence of certain program behaviors by classifying phrases according to the kinds of values they compute</p>
+
+    <body>
+        <h1 id="week-1">Week 1</h1>
+<hr>
+<h4 id="type-systems-in-computing">Type Systems in Computing</h4>
+<blockquote>
+<p>A type system is a tractable syntactic method for proving thea bsence of certain program behaviors by classifying phrases according to the kinds of values they compute</p>
+</blockquote>
 <ul>
 <li>Proving the absence of certain program behaviors</li>
 <li>Tractable</li>
 <li>Syntactic</li>
 <li>Clissifivation of values</li>
 </ul>
-<h4 data-line="11" id="Static-vs-Dynamic-Types">Static vs Dynamic Types</h4>
+<h4 id="static-vs-dynamic-types">Static vs Dynamic Types</h4>
 <ul>
 <li>Type systems come from mathematics</li>
 <li>Mathematics itself is decidable (static)</li>
@@ -22,7 +26,7 @@
 </li>
 <li>Tractable means decidable, compile time, in a reasonable (polynomial) big O</li>
 </ul>
-<h4 data-line="21" id="Type-Systems-in-Mathematics-and-Logic">Type Systems in Mathematics and Logic</h4>
+<h4 id="type-systems-in-mathematics-and-logic">Type Systems in Mathematics and Logic</h4>
 <ul>
 <li>Evolve in mathematics to overcome set theory paradoxes</li>
 <li>Stated with &quot;logical foundations&quot; of Mathematics itself</li>
@@ -30,23 +34,23 @@
 <li>In mathematics and logic, programs are algorithms or proofs and always terminate</li>
 <li>Computer programs do not always terminate</li>
 </ul>
-<h4 data-line="29" id="Type-errors">Type errors</h4>
+<h4 id="type-errors">Type errors</h4>
 <ul>
 <li>Type systems cannot detect all errors because some errors are inherently run-time errors. For exampe, dividing by zero.</li>
 </ul>
-<hr />
-<p data-line="34">Sets</p>
+<hr>
+<p>Sets</p>
 <ul>
 <li>Countable</li>
 <li>Uncountable</li>
 <li>Empty set, { }</li>
-<li>Power set <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="script">P</mi></mrow><mo>(</mo><mi>S</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\mathcal{P} (S)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord"><span class="mord mathcal" style="margin-right:0.08222em;">P</span></span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.05764em;">S</span><span class="mclose">)</span></span></span></span></li>
+<li>Power set <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="script">P</mi><mo>(</mo><mi>S</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\mathcal{P} (S)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathcal" style="margin-right:0.08222em;">P</span></span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.05764em;">S</span><span class="mclose">)</span></span></span></span></li>
 <li>Size of a set |s|</li>
-<li>Set listing for defining a set { 0, 1, 2, … }</li>
-<li>Set builder for defining a set { x, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∈</mo></mrow><annotation encoding="application/x-tex">\in</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.5391em;"></span><span class="strut bottom" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="base"><span class="mrel">∈</span></span></span></span> A | P(x) }</li>
+<li>Set listing for defining a set { 0, 1, 2, ... }</li>
+<li>Set builder for defining a set { x, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∈</mo></mrow><annotation encoding="application/x-tex">\in</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">∈</span></span></span></span> A | P(x) }</li>
 </ul>
-<p data-line="43">Some standard sets in mathematics</p>
-<table data-line="45">
+<p>Some standard sets in mathematics</p>
+<table>
 <thead>
 <tr>
 <th>Set</th>
@@ -59,15 +63,15 @@
 <td>Finite</td>
 </tr>
 <tr>
-<td>N = {0, 1, 2, … }</td>
+<td>N = {0, 1, 2, ... }</td>
 <td>countable</td>
 </tr>
 <tr>
-<td>Z = { … , -2, -1, 0 , 1, 2, … }</td>
+<td>Z = { ... , -2, -1, 0 , 1, 2, ... }</td>
 <td>countable</td>
 </tr>
 <tr>
-<td>Q = { 1/b | a <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∈</mo></mrow><annotation encoding="application/x-tex">\in</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.5391em;"></span><span class="strut bottom" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="base"><span class="mrel">∈</span></span></span></span> Z, b <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∈</mo></mrow><annotation encoding="application/x-tex">\in</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.5391em;"></span><span class="strut bottom" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="base"><span class="mrel">∈</span></span></span></span> Z}</td>
+<td>Q = { 1/b | a <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∈</mo></mrow><annotation encoding="application/x-tex">\in</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">∈</span></span></span></span> Z, b <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∈</mo></mrow><annotation encoding="application/x-tex">\in</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">∈</span></span></span></span> Z}</td>
 <td>countable</td>
 </tr>
 <tr>
@@ -75,9 +79,8 @@
 <td>uncountable</td>
 </tr>
 </tbody>
-<tbody></tbody>
 </table>
-<p data-line="54">Tuple</p>
+<p>Tuple</p>
 <ul>
 <li>Ternary relation R and mixfix notation
 <ul>
@@ -91,5 +94,6 @@
 </ul>
 </li>
 </ul>
-</body>
-              </html>
+
+    </body>
+    </html>
