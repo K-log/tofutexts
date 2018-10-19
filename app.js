@@ -2,7 +2,10 @@ const express = require('express');
 const fs = require('fs');
 const engines = require('consolidate');
 const path = require("path");
-const router = express.Router();
+const notesHelper = require("./notesHelper");
+
+
+
 const app = express();
 const port = 50000;
 
@@ -19,44 +22,67 @@ app.use(express.static(__dirname + '/public'));
  * Logs URL accesses and times to log.md.
  */
 var logs = "./logs/log.md";
-var stream = fs.createWriteStream(logs, {flags: 'a'});
+var stream = fs.createWriteStream(logs, { flags: 'a' });
 
-var logger = function(err, req, res, next){
-    stream.write(new Date().toISOString() + ' | ' + req.url + '\n');
-    console.log(new Date().toISOString() + ' | ' + req.url + ' | ' + err.stack.toString());
-    next();
+var logger = function (err, req, res, next) {
+  stream.write(new Date().toISOString() + ' | ' + req.url + '\n');
+  console.log(new Date().toISOString() + ' | ' + req.url + ' | ' + err.stack.toString());
+  next();
 }
 
 
-router.use(logger);
-// router.get('/', function(req, res){
-//     //res.send('Hello World!');
-//     res.send("Hello </br><a href='/languages-and-machines/'>week1</a>");
-// });
+app.use(logger);
 
-router.get("*", function(req, res){
-    res.render(__dirname + "/public/base.ejs", 
-        {
-            title: req.url.title,
-            filePath: path.join(__dirname, "views/languages-and-machines/week1.html")
-        });
+app.use("/notes", notesHelper);
 
+// Index
+app.get('/', function (req, res) {
+  res.render(__dirname + "/public/base.ejs",
+    {
+      title: "Home Page",
+      filePath: path.join(__dirname, "/public/index.ejs")
+    });
 });
 
-/**
-router.get('/languages-and-machines/', function(req, res){
-    res.sendFile(__dirname + "/views/languages-and-machines/week1.html");
+app.get('/posts', function (req, res) {
+  res.render(__dirname + "/public/base.ejs",
+    {
+      title: "Home Page",
+      filePath: path.join(__dirname, "/public/posts.ejs")
+    });
 });
-*/
 
-app.use("/", router);
+app.get('/about', function (req, res) {
+  res.render(__dirname + "/public/base.ejs",
+    {
+      title: "Home Page",
+      filePath: path.join(__dirname, "/public/about.ejs")
+    });
+});
 
-app.use("*", function(req, res){
-    res.sendFile(__dirname + "/public/404.html");
-})
+
+// Handle 400
+app.use(function (req, res) {
+  res.status(400);
+  res.render(__dirname + "/public/base.ejs",
+    {
+      title: "Error 400",
+      filePath: path.join(__dirname, "/public/error.ejs")
+    });
+});
+
+// Handle 500
+app.use(function (error, req, res, next) {
+  res.status(500);
+  res.render(__dirname + "/public/base.ejs",
+    {
+      title: "Error 500",
+      filePath: path.join(__dirname, "/public/error.ejs")
+    });
+});
 
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}!`); 
-    stream.write(new Date().toISOString() + ` Starting Server on port ${port}!\n---\n`);
-    stream.write('Time | Request | error\n\---|---|---|\n')
+  console.log(`Example app listening on port ${port}!`);
+  stream.write(new Date().toISOString() + `Starting Server on port ${port}!\n---\n`);
+  stream.write('Time | Request | error\n\---|---|---|\n');
 });

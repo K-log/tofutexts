@@ -1,0 +1,138 @@
+    <body>
+        <h1 id="week-2">Week 2</h1>
+<hr>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mi>x</mi><mi mathvariant="normal">.</mi><mo>(</mo><mi>λ</mi><mi>y</mi><mi mathvariant="normal">.</mi><mo>(</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo>)</mo><mo>)</mo><mo>=</mo><mi>λ</mi><mi>x</mi><mi mathvariant="normal">.</mi><mi>y</mi><mi mathvariant="normal">.</mi><mi>x</mi><mo>+</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">\lambda x.(\lambda y.(x+y)) = \lambda x.y.x+y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathit">λ</span><span class="mord mathit">x</span><span class="mord">.</span><span class="mopen">(</span><span class="mord mathit">λ</span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mord">.</span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathit">λ</span><span class="mord mathit">x</span><span class="mord">.</span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mord">.</span><span class="mord mathit">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathit" style="margin-right:0.03588em;">y</span></span></span></span></p>
+<p><strong>Complete(Strong) induction:</strong><br>
+Suppose that p is a predicate on the natural numbers. Then:<br>
+If, for each natural number n,<br>
+    given P(i) for all i &lt; n<br>
+    we can show P(n),<br>
+then P(n) holds for all n.</p>
+<p><strong>Concrete Syntax:</strong><br>
+3 + 4 * 7</p>
+<p><strong>Abstract Syntax:</strong></p>
+<pre><code>    +
+  /   \
+ 3    *
+      / \
+    4   7
+</code></pre>
+<p><strong>Untyped Arithmatic Expressions(UAE):</strong><br>
+A small language of Untyped Arithmatic Expressions used to illustrate concepts.</p>
+<p><strong>Exercise:</strong><br>
+(a) Give an abstract syntax for the lambda calculus. Use App for the apply operator and use &quot;Abs x&quot; for the abstration operator with variable x. See Selinger Ch 2.1 for the concrete syntax.</p>
+<p>Lambda terms: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>M</mi><mo separator="true">,</mo><mi>N</mi><mo>:</mo><mo>:</mo><mo>=</mo><mi>x</mi><mi mathvariant="normal">∣</mi><mo>(</mo><mi>M</mi><mi>N</mi><mo>)</mo><mi mathvariant="normal">∣</mi><mi>λ</mi><mi>x</mi><mi mathvariant="normal">.</mi><mi>M</mi></mrow><annotation encoding="application/x-tex">M, N ::= x | (M N) | \lambda x.M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathit" style="margin-right:0.10903em;">M</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mrel">:</span></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathit">x</span><span class="mord">∣</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.10903em;">M</span><span class="mord mathit" style="margin-right:0.10903em;">N</span><span class="mclose">)</span><span class="mord">∣</span><span class="mord mathit">λ</span><span class="mord mathit">x</span><span class="mord">.</span><span class="mord mathit" style="margin-right:0.10903em;">M</span></span></span></span></p>
+<blockquote>
+<p>x<br>
+App M N<br>
+Abs x M</p>
+</blockquote>
+<p>(b) Give the abstract syntax tree for the lambda express<br>
+ion apply3x where<br>
+apply3x <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>=</mo><mo>=</mo><mi>λ</mi><mi>f</mi><mi mathvariant="normal">.</mi><mi>λ</mi><mi>x</mi><mi mathvariant="normal">.</mi><mi>f</mi><mo>(</mo><mi>f</mi><mo>(</mo><mi>f</mi><mi>x</mi><mo>)</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">== \lambda f.\lambda x.f (f (f x))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathit">λ</span><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mord">.</span><span class="mord mathit">λ</span><span class="mord mathit">x</span><span class="mord">.</span><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mord mathit">x</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span></p>
+<pre><code>    Abs f
+       |
+    Abs x
+    /     \
+  f     App
+        /    \
+      f      App
+             /   \
+          f         x
+</code></pre>
+<p>(c) Give the abstract syntax tree for the lambda expression apply2x where<br>
+apply2x <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>=</mo><mo>=</mo><mi>λ</mi><mi>g</mi><mi mathvariant="normal">.</mi><mi>λ</mi><mi>x</mi><mi mathvariant="normal">.</mi><mi>g</mi><mo>(</mo><mi>g</mi><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">== \lambda g.\lambda x.g (g x)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathit">λ</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord">.</span><span class="mord mathit">λ</span><span class="mord mathit">x</span><span class="mord">.</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit">x</span><span class="mclose">)</span></span></span></span></p>
+<pre><code>    Abs g
+       |
+    App x
+    /     \
+  g    App
+        /    \
+      g      g
+</code></pre>
+<p>(d) Give the abstract syntax tree for the lambda expression<br>
+(apply3x apply2x)</p>
+<pre><code>          App
+        /        \
+Abs f         Abs g
+   |                 |
+Abs x         App x
+  /   \            /    \
+f     App      g    App
+     /    \             /    \
+    f     App      g        g
+          /   \
+        f       x  
+</code></pre>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>S</mi><mn>0</mn></msub><mo>=</mo><mo>{</mo><mo>}</mo></mrow><annotation encoding="application/x-tex">S_0 = \{\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathit" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mclose">}</span></span></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>S</mi><mn>1</mn></msub><mo>=</mo><mo>{</mo></mrow><annotation encoding="application/x-tex">S_1 = \{</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathit" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span></span></span></span>true, false, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>}</mo></mrow><annotation encoding="application/x-tex">0\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">0</span><span class="mclose">}</span></span></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>S</mi><mn>2</mn></msub><mo>=</mo><mo>{</mo></mrow><annotation encoding="application/x-tex">S_2 = \{</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathit" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span></span></span></span>true, false, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>}</mo></mrow><annotation encoding="application/x-tex">0\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">0</span><span class="mclose">}</span></span></span></span>
+<ul>
+<li>size of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>S</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">S_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathit" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></li>
+</ul>
+</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∪</mo></mrow><annotation encoding="application/x-tex">\cup</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.55556em;vertical-align:0em;"></span><span class="mord">∪</span></span></span></span> {succ true, succ false, succ 0, pred true, pred false, pred 0, iszero true, iszero false, iszero 0}
+<ul>
+<li>+ 9 (size of s1) * 3</li>
+</ul>
+</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∪</mo></mrow><annotation encoding="application/x-tex">\cup</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.55556em;vertical-align:0em;"></span><span class="mord">∪</span></span></span></span> {if t1 then t2 else t3 | t1, t2, t3 in S1}
+<ul>
+<li>+ 333  (size of s1) ^ 3</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><strong>Exercise:</strong> Translate the proof of the Lemma 3.3.3 in Pierce into a structural induction proof.</p>
+<ul>
+<li>Hint: The translation is almost trivial because, for any term of k, the immediate subterms are k for depth of d
+<ul>
+<li>Same induction hypothesis. Says its a proof by induction on strutural induction.</li>
+</ul>
+</li>
+</ul>
+<h4 id="downarrow-the-following-are-taken-from-lect-notes-downarrow"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>↓</mo></mrow><annotation encoding="application/x-tex">\downarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mrel">↓</span></span></span></span> The following are taken from lect notes <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>↓</mo></mrow><annotation encoding="application/x-tex">\downarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mrel">↓</span></span></span></span></h4>
+<h4 id="semantic-styles-pierce-34">Semantic Styles  (Pierce 3.4)</h4>
+<ul>
+<li>
+<p>Operational Semantics</p>
+<ul>
+<li>An abstract machine with a transition function. The machine is typically an abstraction of the language being defined (rather than some low-level assembly language or Turing machine). The language is defined by what the abstract machine does.</li>
+</ul>
+</li>
+<li>
+<p>Denotational Semantics</p>
+<ul>
+<li>The meaning of a program in a language is a mathematical object, such as a function or a number. An &quot;interpretation function&quot; maps programs into mathematical objects in &quot;semantic domains&quot;.</li>
+</ul>
+</li>
+<li>
+<p>Axiomatic Semantics</p>
+<ul>
+<li>A language definition as a set of laws. The meaning of a program is what can be proved about it. The method focuses on the process of reasoning about programs. A typical property is an &quot;invariant&quot; propertity that the program is expected to maintain throughout loops, for example.</li>
+</ul>
+</li>
+</ul>
+<h4 id="operational-semantics">Operational Semantics</h4>
+<ul>
+<li>
+<p>Pierce chooses Operational Semantics and presents it in terms of rules for &quot;Evaluation&quot;. I will sometimes refer to this as &quot;Evaluation Semantics&quot;.</p>
+</li>
+<li>
+<p>Early operational semantics was based on a &quot;state-transition&quot; style of automata theory (eg, Finite State Automata, Turning machines). This is biased to a veiw of computing as &quot;stored program&quot;, or Von Neumann style computation.</p>
+</li>
+<li>
+<p>Operational semantics as presented by Pierce (and others) is based on defining evaluation using an inference rule style. This has the advantage of being less tied to &quot;stored program&quot; models and closer to logic and mathematics.</p>
+</li>
+<li>
+<p>Evaluation by inference rules evolved out of the semantics of the lambda calculus and the &quot;Natural Deduction&quot; (Gentzen) style of reasoning in logic.</p>
+</li>
+<li>
+<p>The beta reduction of the lambda calculus is an inference rule style of evaluation.</p>
+</li>
+</ul>
+<hr>
+
+    </body>
+    </html>

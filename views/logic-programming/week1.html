@@ -1,0 +1,108 @@
+
+    <body>
+        <h1 id="week-1">Week 1</h1>
+<hr>
+<h3 id="prolog">Prolog</h3>
+<ul>
+<li>
+<p>Declaritive</p>
+</li>
+<li>
+<p>Recursion(no &quot;for&quot; or &quot;while&quot; loops)</p>
+</li>
+<li>
+<p>Relations (no functions)</p>
+</li>
+<li>
+<p>Unification</p>
+<ul>
+<li>With the help of variables</li>
+<li>Very powerful</li>
+</ul>
+</li>
+<li>
+<p>Syntax</p>
+<ul>
+<li>Atoms
+<ul>
+<li>An atom can be one of two things</li>
+<li>A string of characters made up of upper and lower-case letters, digits, underscores, and must begin with a lower-case character.</li>
+<li>An arbitrary sequence of characters enclosed in single quotes.</li>
+<li>A string of special characters</li>
+</ul>
+</li>
+<li>Variables
+<ul>
+<li>A string of upper-case or lower-case letters, digits and underscores. Starts with either an upper-case letter or an underscore.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>    happy(yolanda)
+    listens2music(mia)
+    listens2music(yolanda) :- happy(yolanda)
+    playsAirGuitar(mia) :- listens2music(mia)
+    playsAirGuitar(yolanda) :- listens2music(yolanda)
+</code></pre>
+<p>There are 5 clauses in this knowledge base.</p>
+<p>There are 3 predicates in this knowledge base: happy, listens2music, and playsAirGuitar</p>
+<pre><code>listens2music(yolanda) :- happy(yolanda)
+</code></pre>
+<p>reads as</p>
+<pre><code>if yolanda is happy then yoland listens to music
+</code></pre>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">--</th>
+<th>Prolog</th>
+<th>Logic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Implication</td>
+<td>A <code>:-</code> B</td>
+<td>B <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">→</span></span></span></span> A</td>
+</tr>
+<tr>
+<td style="text-align:center">Conjunction</td>
+<td>A<code>,</code> B</td>
+<td>A <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∧</mo></mrow><annotation encoding="application/x-tex">\wedge</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.55556em;vertical-align:0em;"></span><span class="mord">∧</span></span></span></span> B</td>
+</tr>
+<tr>
+<td style="text-align:center">Disjunction</td>
+<td>A<code>;</code> B</td>
+<td>A <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∨</mo></mrow><annotation encoding="application/x-tex">\vee</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.55556em;vertical-align:0em;"></span><span class="mord">∨</span></span></span></span> B</td>
+</tr>
+</tbody>
+</table>
+<p>Use of inference (modus pones)<br>
+Negation(?)</p>
+<hr>
+<p><strong>Q:</strong> What exactly are facts, rules, and queries built of?</p>
+<p><strong>A:</strong> Prolog terms</p>
+<pre><code class="language-text">                     Term
+                     /       \
+  Simple terms         Complex terms
+       /              \
+Constants   Variables
+    /        \
+Atoms   Numbers
+
+</code></pre>
+<ul>
+<li>Complex terms are build out of a <strong>functor</strong> directly followed by a sequence of <strong>arguments</strong>
+<ul>
+<li>Arguments are put in round brackets, separated by commas.</li>
+<li>The functor must be an atom.</li>
+</ul>
+</li>
+<li>The number of arguments a complex term has is called its <strong>arity</strong></li>
+<li></li>
+</ul>
+
+    </body>
+    </html>
