@@ -4,8 +4,6 @@ const engines = require('consolidate');
 const path = require("path");
 const notesHelper = require("./notesHelper");
 
-
-
 const app = express();
 const port = 50000;
 
