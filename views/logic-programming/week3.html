@@ -1,0 +1,40 @@
+    <body>
+        <h1 id="week-3">Week 3</h1>
+<hr>
+<p>Recursion</p>
+<ul>
+<li>Prolog predicates can be defined recursively.</li>
+<li>A predicate is recursively defined if one or more rules in its definition refers to itself.</li>
+</ul>
+<pre class="hljs"><code><div>
+isDigesting(<span class="hljs-symbol">X</span>, <span class="hljs-symbol">Y</span>) :- justAte(<span class="hljs-symbol">X</span>, <span class="hljs-symbol">Y</span>).
+isDigesting(<span class="hljs-symbol">X</span>, <span class="hljs-symbol">Y</span>) :- justAte(<span class="hljs-symbol">X</span>, <span class="hljs-symbol">Z</span>), isDigesting(<span class="hljs-symbol">Z</span>, <span class="hljs-symbol">Y</span>).
+
+justAte(spider, bug).
+</div></code></pre>
+<p>For more info refer to practical prolog homework.</p>
+<p><strong>Successor function:</strong></p>
+<pre class="hljs"><code><div>numeral(<span class="hljs-number">0</span>).
+numeral(succ(<span class="hljs-symbol">X</span>)) :- <span class="hljs-symbol">X</span>+<span class="hljs-number">1.</span>
+</div></code></pre>
+<p><strong>Addition:</strong></p>
+<pre class="hljs"><code><div>add(<span class="hljs-number">0</span>, <span class="hljs-symbol">X</span>, <span class="hljs-symbol">X</span>).    <span class="hljs-comment">%%% base clause</span>
+
+add(succ(<span class="hljs-symbol">X</span>), <span class="hljs-symbol">Y</span>, succ(<span class="hljs-symbol">Z</span>)) :- add(<span class="hljs-symbol">X</span>, <span class="hljs-symbol">Y</span>, <span class="hljs-symbol">Z</span>).    <span class="hljs-comment">%%% recursive clause</span>
+</div></code></pre>
+<hr>
+<ul>
+<li>Prolog is not a full logic programming language.</li>
+<li>Prolog has a specific way of answering queries:
+<ul>
+<li>Search knowledge base from top to bottom</li>
+<li>Processes clauses from left to right</li>
+<li>Backtracking to recover from bad choices</li>
+</ul>
+</li>
+<li>The amount of queries you can execute before you run out of memory is dependant on your amount of stack space.</li>
+</ul>
+<hr>
+
+    </body>
+    </html>
