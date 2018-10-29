@@ -44,6 +44,7 @@ app.get('/', function (req, res) {
     });
 });
 
+
 app.get('/editor', function (req, res) {
   res.render(__dirname + "/public/base.ejs",
     {
@@ -52,9 +53,7 @@ app.get('/editor', function (req, res) {
     });
 });
 
-app.post('/editor', function (req, res) {
-  console.log(req.body.editorInputTextArea);
-});
+
 
 app.get('/about', function (req, res) {
   res.render(__dirname + "/public/base.ejs",

@@ -32,7 +32,6 @@
 
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
 <script>
-    document.getElementById('editorInputTextArea').submit();
     document.addEventListener('keyup', function(event) {
       var editorInput = document.getElementById("editorInputTextArea").value;
       var editorOutput = document.getElementById("katex-output");
@@ -53,4 +52,5 @@
     document.addEventListener("DOMContentLoaded", function() {
 
     });
+    document.getElementById("'editorInputTextArea'").submit();
 </script>
