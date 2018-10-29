@@ -24,8 +24,8 @@
     list-style-type: none;
 }
 
-ul.nav li.dropdown:hover ul.dropdown-menu {
-  display: block;
+ul.nav li.dropdown:hover > ul.dropdown-menu {
+  display: block;    
 }
 
 a {
@@ -34,4 +34,8 @@ a {
 
 a:hover {
   color:rgb(100, 100, 100);
+}
+
+#mainContent {
+  min-height: 800px;
 }

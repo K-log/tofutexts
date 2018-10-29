@@ -44,18 +44,22 @@ app.get('/', function (req, res) {
     });
 });
 
-app.get('/posts', function (req, res) {
+app.get('/editor', function (req, res) {
   res.render(__dirname + "/public/base.ejs",
     {
-      title: "Home Page",
-      filePath: path.join(__dirname, "/public/posts.ejs")
+      title: "Web Editor",
+      filePath: path.join(__dirname, "/public/editor.ejs")
     });
+});
+
+app.post('/editor', function (req, res) {
+  console.log(req.body.editorInputTextArea);
 });
 
 app.get('/about', function (req, res) {
   res.render(__dirname + "/public/base.ejs",
     {
-      title: "Home Page",
+      title: "About",
       filePath: path.join(__dirname, "/public/about.ejs")
     });
 });

@@ -1,0 +1,56 @@
+<div class="text-center">
+  <h1><u>Web Editor</u></h1>
+  <h3>Work in progress.</h3>
+  <hr>
+  <div class="row">
+    <div class="col-md-6">
+      <h1>Input</h1>
+      <hr>
+      <form method=POST>
+        <div class="form-group">
+          <label for="editorInputTextArea">Write something in Katex syntax!</label>
+          <textarea class="form-control" id="editorInputTextArea" rows="5" wrap="hard"></textarea>
+        </div>
+        <!-- <button type="button" class="btn btn-primary" id="renderInput">Render</button> -->
+        <button type="submit" class="btn btn-primary">Download</button>
+      </form>
+    </div>
+    <div class="col-md-6">
+      <h1>Output</h1>
+      <hr>
+      <form>
+          <div class="form-group">
+            <label for="katex-output">Rendered text will appear here!</label>
+            <p id="katex-output" class="bg-info" style="white-space: pre-wrap;">
+                <!-- Katex output will go below here -->
+            </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script>
+    document.getElementById('editorInputTextArea').submit();
+    document.addEventListener('keyup', function(event) {
+      var editorInput = document.getElementById("editorInputTextArea").value;
+      var editorOutput = document.getElementById("katex-output");
+      editorOutput.innerText = editorInput;
+      // katex.render(editorInput, editorOutput, {
+      //   throwOnError: false},
+      //   {
+      //     displayMode: true,
+      //   });
+      renderMathInElement(editorOutput, {
+        display: false,
+        strict: "newLineInDisplayMode",
+        ignoredTags: ["script", "noscript", "style", "textarea", "pre", "code", "br"],
+        delimiters: [ {left: "$", right: "$", display: false},],
+      });
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+
+    });
+</script>
