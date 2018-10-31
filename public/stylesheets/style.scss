@@ -1,7 +1,24 @@
 body{
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-a{
-    color: #00B7FF;
+
+.notes-list {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+ul.nav li.dropdown:hover > ul.dropdown-menu {
+  display: block;    
+}
+
+a {
+  color: rgb(49, 49, 49);
+}
+
+a:hover {
+  color:rgb(100, 100, 100);
+}
+
+#mainContent {
+  min-height: 800px;
 }
