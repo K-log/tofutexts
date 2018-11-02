@@ -1,6 +1,28 @@
 {% extends 'layout.twig' %}
 
+{% block title %}{{title}}{% endblock %}
+
 {% block body %}
-  <h1>{{title}}</h1>
-  <p>Welcome to {{title}}</p>
+<div class="class-list">
+  <h1 class="text-center"><u>All Class notes</u></h1>
+    <div class="row text-center justify-content-center">
+    {% for item in classList %}
+    <div class="col-md-6 mb-4">
+        <div class="card bg-info text-center">
+          <div class="card-header">
+            CNC
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{item.title}}</h5>
+            <p class="card-text">{{item.description}}</p>
+            <a href={{item.url}} class="btn btn-primary">Notes</a>
+          </div>
+          <div class="card-footer text-muted">
+            Last Updated: Looks like this is broken...
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+</div>
 {% endblock %}

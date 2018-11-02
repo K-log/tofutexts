@@ -3,5 +3,5 @@
 {% block body %}
   <h1>{{message}}</h1>
   <h2>{{error.status}}</h2>
-  <h4>Oops! Looks like you broke something.</h4>
+  <pre>{{error.stack}}</pre>
 {% endblock %}
