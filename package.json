@@ -21,7 +21,7 @@
     "ejs": "^2.6.1",
     "express": "^4.16.3",
     "express-generator": "^4.16.0",
-    "marked": "^0.5.1",
+    "marked": "^0.7.0",
     "underscore": "^1.9.1"
   }
 }
